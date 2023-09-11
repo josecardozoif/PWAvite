@@ -1,14 +1,14 @@
 import { warmStrategyCache } from 'workbox-recipes';
 import { CacheFirst, StaleWhileRevalidate } from 'workbox-strategies';
 import { registerRoute, route } from 'workbox-routing';
-import { CachableResponsePlugin } from 'workbox-cacheble-response';
+import { CacheableResponsePlugin } from 'workbox-cacheable-response';
 import { ExpirationPlugin } from 'workbox-expiration';
 
 //configurando o cache
 const pageCache= new CacheFirst({
     cacheName: 'pwavite',
     plugins: [
-        new CachableResponsePlugin({//resposta de status, "error 404", mas eu to montando
+        new CacheableResponsePlugin({//resposta de status, "error 404", mas eu to montando
             statuses: [0, 200],
         }),
         new ExpirationPlugin({//tempo pra expirar o cache em segundos
@@ -32,7 +32,7 @@ registerRoute(
     new StaleWhileRevalidate({
         cacheName: 'asset-cache',
         plugins: [
-            new CachebleResponsePlugin({
+            new CacheableResponsePlugin({
                 statuses: [0, 200],
             }),
         ],
