@@ -24,7 +24,7 @@ warmStrategyCache({
 });
 
 //registrando a rota
-registerRouter(({ request }) => request.mode === 'navigate', pageCache);
+registerRoute(({ request }) => request.mode === 'navigate', pageCache);
 
 //configurando cache de assets
 registerRoute(
