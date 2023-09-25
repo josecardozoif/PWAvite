@@ -10,53 +10,25 @@
     <link rel="manifest" href="/manifest.json">
     <link rel="apple-touch-icon" href="images/pwa-icon-512.png">
  
-    <title>IMCalc</title>
+    <title>Title</title>
 </head>
 
 <body>
+    
     <div>
-        <h1>Calculadora de IMC</h1>
-    </div>
-        
-    <form id="formulario" onsubmit="return false;">
-        <label id="lnome">Nome:</label>
-        <input id="nome" required type="text"/>
+        <form>
+            <input required type="text" placeholder="Insira Seu Nome" name="nome"/>
+            <input required type="text" placeholder="Insira Sua Idade" name="idade"/>
+            <div>
+                <button type="submit" id="btnSalvar">Salvar</button>
+                <button type="button" id="btnListar">Listar</button>
+            </div>
+        </form>
 
-        <label id="lidade">Idade:</label>
-        <input id="idade" required type="number"/>
-
-        <label id="lsexo">Sexo:</label>
-            <select name="sexo" id="sexo">
-                <option value="masc">Masculino</option>
-                <option value="fem">Feminino</option>
-            </select>
-
-            <div></div>
-
-        <label id="lmetros">Metros:</label>
-        <input id="metros" required type="number"/>
-
-        <label id="lcentimetros">Centimetros:</label>
-        <input id="centimetros" required type="number"/>
-
-        <label id="lpeso">Peso:</label>
-        <input id="peso" required type="number"/>
-
-        <label id="limc">IMC:</label>
-        <input id="imc" type="text"/>
-
-        <h1 id="resposta"></h1>
-        
-        <button id="botao" onclick="calcular()">Calcular</button>
-
-        <div style="text-align: center;">
-            <button id="btnSalvar">Salvar</button>
-            <button id="btnListar">Listar</button>
-        </div>
         <div>
-            <output></output>
+            <div class="listar"></div>
         </div>
-    </form>
+    </div>
 
 <script type="module" src="js/main.js"></script>
 <script type="module" src="js/db.js"></script>
